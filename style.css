@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2? família=Bebas+Neue&family=Poppins:ital,wght@1,200;1.500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html  {
+    font-size: 10px;
+    font-family: 'Poppins', 'Verdana', sans-serif;
+    scroll-behavior: smooth;    
+}
+
+header {
+    background-color: #B3949B;    
+}
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 980px;
+    height: 75px;
+    margin: auto;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 24px;
+    transition: all 250ms linear 0s;
+}
+
+header nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+header .container img {
+    height: 80px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#presentation .container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*apresentação*/
+
+#presentation   {
+    background-image: url(./img/Ambiente.png);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+#presentation h1 {
+    display: block;
+    width: fit-content;
+    font-size: 5rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#presentation h1:nth-child(1){
+    animation-delay: 1s;
+}
+#presentation h1:nth-child(2){
+    animation-delay: 2s;
+}
+#presentation h1:nth-child(3){
+    animation: text_reveal_name .5s ease forwards; 
+    animation-delay: 3s;
+}
+
+#presentation .cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: gold;
+    background-color: transparent;
+    border: 2px solid #B3949B;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 20px;
+    transition: .5s ease;
+    transition-property: backgroud-color, color;
+}
+
+#presentation .cta:hover    {
+    color: white;
+    font-weight: 500;
+    background-color: #B3949B;
+    transition: .5s ease;    
+}
+
+#presentation h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+    background-color: #B3949B;
+}
+
+#presentation h1:nth-child(1) span{
+    animation-delay: .4s;
+}
+#presentation h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#presentation h1:nth-child(3) span{    
+    animation-delay: 2.5s;
+}
+
+
+#presentation::after    {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* keyframe */
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+
+@keyframes text_reveal_name{
+    100%{
+        color:gold;
+        font-weight: 500px;
+    }
+}
+
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+
+#cards {
+    width: 90%;
+    max-width: 980px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    padding-top: 20px;
+}
+
+.text--midium {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    color: rgb(187, 185, 185);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px -4px #000000;
+    transition: all 0.3s ease 0s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.image {
+    width: 100%;
+    padding-top: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.image img {
+    position: absolute;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    margin: 20px;
+
+}
+
+.title {
+    margin-bottom: 0px;
+}
+
+section#contato {
+    background-color: #e2f0f9;
+    margin-top: 20px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+section#contato form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 32px;
+}
+
+section#contato div.linha {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+
+}
+section#contato div.linha div {
+    width: 48%;
+}
+
+section#contato input, select, textarea {
+    width: 100%;
+    border: 2px solid #286fb4;
+    border-radius: 5px;
+    padding: 16px;
+    background: none;
+    margin: 4px 0 16px 0;
+}
+section#contato textarea {
+   font-family: 'Montserrat', sans-serif;
+   line-height: 24px;
+   resize: none;
+}
+
+section#contato button {
+    display: inline-block;
+    padding: 10px 30px;
+    color: gold;
+    background-color: transparent;
+    border: 2px solid #B3949B;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 20px;
+    transition: .5s ease;
+    transition-property: backgroud-color, color;
+}
+
+section#contato button:hover    {
+    color: white;
+    font-weight: 500;
+    background-color: #B3949B;
+    transition: .5s ease;    
+}
+
+
+section#contato span.asterisco {
+   color: #df4c73;
+
+}
+
+footer {
+    background-color:#B3949B ;
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+
+}
+
+footer a:hover {
+    text-decoration: underline;    
+    color:greenyellow;
+}
